@@ -1,0 +1,23 @@
+# 图片类二进制文件，禁止git自动修改换行
+*.jpg binary
+*.jpeg binary
+*.png binary
+*.gif binary
+*.bmp binary
+*.webp binary
+
+# 压缩包
+*.zip binary
+*.rar binary
+*.7z binary
+
+# 程序/可执行文件
+*.exe binary
+*.dll binary
+
+# 文本文件（代码类，允许换行转换）
+*.py text
+*.md text
+*.txt text
+*.json text
+*.csv text
