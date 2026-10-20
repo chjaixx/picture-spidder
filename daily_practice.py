@@ -159,27 +159,64 @@
 #     for j in range(1,i+1):
 #         print(f'{j}*{i}={j*i}\t',end='')
 #     print('\n')
-money=8000
-for i in range(21):
-    import random
-    x=random.randint(1,10)
-    if x<5:
-        print(f"{i}没达标")
-        continue
-    if x>=5 and money>=1000:
-        money-=1000
-        print(f'{i}发工资1000公司还剩{money}')
-        continue
-    else:
-        print(f"{i}公司没钱了")
-        break
 
+# money=8000
+# for i in range(21):
+#     import random
+#     x=random.randint(1,10)
+#     if x<5:
+#         print(f"{i}没达标")
+#         continue
+#     if x>=5 and money>=1000:
+#         money-=1000
+#         print(f'{i}发工资1000公司还剩{money}')
+#         continue
+#     else:
+#         print(f"{i}公司没钱了")
+#         break
 
+# agelist=[21,25,21,22,23,20]
+# agelist.append(31)
+# print(agelist)
+# agenew=[29,33,30]
+# agelist.extend(agenew)
+# print(agelist)
+# qu_1=agelist.pop(0)
+# qu_2=agelist.pop(-1)
+# print('取出',qu_1,qu_2)
+# print('31下标',agelist.index(31))
 
+# ttlist=[1,2,3,4,5,6,7,8,9,10]
+# def ttfor():
+#     newlis=[]
+#     for i in ttlist:
+#         if i%2==0:
+#             newlis.append(i)
+#     print(newlis)
+# def ttwhile():
+#     newlis=[]
+#     i=0
+#     while i<len(ttlist):
+#         if ttlist[i]%2==0:
+#             newlis.append(ttlist[i])
+#         i+=1
+#     print(newlis)
+# if __name__ == '__main__':
+#     ttfor()
+#     ttwhile()
 
+# strr='itheima ityuan comter'
+# print(strr.count('it'))
+# strr=strr.replace(' ','|')
+# print(strr)
+# print(strr.split('|'))
 
+# pp="bca,gfey,jih"
+# p=pp.split(',')
+# print(p[1][2::-1])
 
-
+my_set={1,'a','b','c',5,6,67}
+print(my_set)
 
 
 
