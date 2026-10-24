@@ -218,56 +218,94 @@
 # my_set={1,'a','b','c',5,6,67}
 # print(my_set)
 
-add={
-    'wang':{
-        '部门':'科技部',
-        '工资':3000,
-        '级别':1
-    },
-    'zhou':{
-        '部门':'科技部',
-        '工资':5000,
-        '级别':2
-    },
-    'ling':{
-        '部门':'市场部',
-        '工资':7000,
-        '级别':3
-    },
-    'zhang':{
-        '部门':'科技部',
-        '工资':4000,
-        '级别':1
-    },
-    'liu':{
-        '部门':'市场部',
-        '工资':5000,
-        '级别':2
-    }
-}
-#得到员工名
-acs=add.keys()
-#对员工名进行遍历
-for acsh in acs:
-    #得到员工字典
-    ac=add[acsh]
-    #对符合条件的员工字典进行修改
-    if ac['级别']==1:
-        ac['级别']+=1
-        ac['工资']+=1000
-print(add)
+# add={
+#     'wang':{
+#         '部门':'科技部',
+#         '工资':3000,
+#         '级别':1
+#     },
+#     'zhou':{
+#         '部门':'科技部',
+#         '工资':5000,
+#         '级别':2
+#     },
+#     'ling':{
+#         '部门':'市场部',
+#         '工资':7000,
+#         '级别':3
+#     },
+#     'zhang':{
+#         '部门':'科技部',
+#         '工资':4000,
+#         '级别':1
+#     },
+#     'liu':{
+#         '部门':'市场部',
+#         '工资':5000,
+#         '级别':2
+#     }
+# }
+# #得到员工名
+# acs=add.keys()
+# #对员工名进行遍历
+# for acsh in acs:
+#     #得到员工字典
+#     ac=add[acsh]
+#     #对符合条件的员工字典进行修改
+#     if ac['级别']==1:
+#         ac['级别']+=1
+#         ac['工资']+=1000
+# print(add)
 
+# n=list(map(int,input().split('/n')))
+# print(n)
 
+# n=int(input())
+# i=1
+# while i<=n:
+#     a=list(map(int,input().split()))
+#     num=a[0]+a[1]
+#     print(num)
+#     i+=1
+#素数的判断
+# n=int(input())
+# for i in range(1,n+1):
+#     a=int(input())
+#     if a<2:
+#         print('No')
+#         continue
+#     for j in range(2,a):
+#         if a%j==0:
+#             print('No')
+#             break
+#     else:print('Yes')
 
+#统计字符在文件中出现的次数
+# with open('D:/测试.txt','r',encoding='utf-8') as f:
+#     tt=f.read()
+# t=tt.split()
+# num=0
+# for i in t:
+#     if i=='chj':
+#         num+=1
+# print(t)
+# print(f'chj出现的次数为：{num}')
 
-
-
-
-
-
-
-
-
+#异常的传递性和处理
+def fanin1():
+    print('执行fanin1')
+    1/0
+def fanin2():
+    fanin1()
+    print('执行fanin2')
+def fanin3():
+    try:
+        fanin2()
+    except Exception as e:
+        print(f"有异常{e}")
+        print('执行fanxi3')
+if __name__ == '__main__':
+    fanin3()
 
 
 
