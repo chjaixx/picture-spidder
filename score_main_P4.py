@@ -1,0 +1,19 @@
+import score_P4
+#异常函数测试
+score_P4.Except()
+#*args和**kwargs函数测试
+list_s=score_P4.args(2,3,54,665,22,11,0)
+student=score_P4.kwargs(梨花=76,李华=88,张三=56,王伟=77)
+print(list_s)
+print(student)
+#冒泡排序测试
+list_mao=[3,2,54,665,22,11,0]
+csmaopao=score_P4.maopao(list_mao)
+print(csmaopao)
+#学生成绩函数测试
+a=score_P4.add(student)
+print(student)
+b=score_P4.query(student)
+print(student)
+c=score_P4.delect(student)
+print(student)
