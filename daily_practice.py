@@ -292,30 +292,161 @@
 # print(f'chj出现的次数为：{num}')
 
 #异常的传递性和处理
-def fanin1():
-    print('执行fanin1')
-    1/0
-def fanin2():
-    fanin1()
-    print('执行fanin2')
-def fanin3():
-    try:
-        fanin2()
-    except Exception as e:
-        print(f"有异常{e}")
-        print('执行fanxi3')
-if __name__ == '__main__':
-    fanin3()
+# def fanin1():
+#     print('执行fanin1')
+#     1/0
+# def fanin2():
+#     fanin1()
+#     print('执行fanin2')
+# def fanin3():
+#     try:
+#         fanin2()
+#     except Exception as e:
+#         print(f"有异常{e}")
+#         print('执行fanxi3')
+# if __name__ == '__main__':
+#     fanin3()
 
+#json数据转换
+# import json
+# s=[{'梨花':78},{'李华':88},{'张三':56},{'王伟':77}]
+# s1=json.dumps(s,ensure_ascii=False)
+# print(type(s1))
+# print(s1)
+# ss={'梨花':76,'李华':88,'张三':56,'王伟':77}
+# s2=json.dumps(ss)
+# print(type(s2))
+# print(s2)
+# s01='[{"梨花":78},{"李华":88},{"张三":56},{"王伟":77}]'
+# s3=json.loads(s01)
+# print(type(s3))
+# print(s3)
+# s02='{"梨花":76,"李华":88,"张三":56,"王伟":77}'
+# s4=json.loads(s02)
+# print(type(s4))
+# print(s4)
 
+#类和对象
+# class student:
+#     name=None
+#     age=None
+# stu1=student()
+# stu1.name='梨花'
+# stu1.age=19
+# print(stu1.name,stu1.age)
 
+# set1={1,2,3}
+# set2={1,5,2,6}
+# set3=set1.difference(set2)
+# print(set3,set1,set2)
+# set1.difference_update(set2)
+# print(set1,set2)
+# set4=set1.union(set2)
+# print(set4)
 
+#成员变量和成员方法
+# class student:
+#     name=None
+#     def say_hi1(self):
+#         print(f"大家好，我是{self.name},多多关照")
+#     def say_hi2(self,mag):
+#         print(f"大家好，我是{self.name},{mag}")
+# s1=student()
+# s1.name='梨花'
+# s1.say_hi1()
+# s2=student()
+# s2.name="苏沫"
+# s2.say_hi2("泡沫的沫")
 
+#类和对象关系
+# class clone:
+#     id=None
+#     jg=None
+#     def mag(self,s,n):
+#         import winsound
+#         winsound.Beep(s,n)
+# z1=clone()
+# z1.id=1
+# z1.jg=1001
+# z1.mag(300,3000)
+# print(z1.id,z1.jg)
+# z2=clone()
+# z2.id=2
+# z2.jg=1002
+# z2.mag(500,3000)
+# print(z2.id,z2.jg)
+# z3=clone()
+# z3.id=3
+# z3.jg=1003
+# z3.mag(15000,1000)
+# print(z3.id,z3.jg)
 
+#构造方法
+# class student:
+#     def __init__(self,name,age):
+#         self.name=name
+#         self.age=age
+#         print(f"姓名：{name}年龄：{age}")
+# for i in range(1,3):
+#     n=input('姓名：')
+#     s=int(input('年龄：'))
+#     student(n,s)
+#     print(f"当前录入{i}个学生,要录入2位学生")
 
+#魔术方法
+# class student:
+#     name=None
+#     age=None
+#     def __init__(self,name,age):
+#         self.name=name
+#         self.age=age
+#     def __str__(self):
+#         return f"name:{self.name},age:{self.age}"
+#     def __lt__(self, other):
+#         return self.age<other.age
+#     def __le__(self, other):
+#         return self.age<=other.age
+#     def __eq__(self, other):
+#         return self.age==other.age
+# s1=student('梨花',22)
+# s2=student('苏沫',22)
+# print(s1==s2)
 
+#私有和封装继承
+class th5g:
+    __is5g=0.9
+    pasrt_id=1002
+    cs=100
+    def __chat_5g(self):
+        print("正在通话中")
+    def chats_5g(self):
+        if self.__is5g>=1:
+            print("5g打开成功")
+        else:
+            print('5g打开失败')
+            self.__chat_5g()
+class Nfc():
+    pasrt_id=1003
+    __is5g = 1
+    cs=99
+    def on(self):
+        if self.__is5g==1:
+            print("打开NFC")
+        else:
+            print("NFC打开失败")
+#重写与调用父类方法
+class Phone(th5g,Nfc):
+    th5g.cs=102
+    def on(self):
+        if self._th5g__is5g==1:
+            super().on()
+            print("成功！")
+        else:
+            Nfc.on(self)
+            print("失败!")
 
-
-
-
-
+    pass
+s=Phone()
+s.chats_5g()
+s.on()
+print(s.cs)
