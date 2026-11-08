@@ -413,40 +413,113 @@
 # print(s1==s2)
 
 #私有和封装继承
-class th5g:
-    __is5g=0.9
-    pasrt_id=1002
-    cs=100
-    def __chat_5g(self):
-        print("正在通话中")
-    def chats_5g(self):
-        if self.__is5g>=1:
-            print("5g打开成功")
-        else:
-            print('5g打开失败')
-            self.__chat_5g()
-class Nfc():
-    pasrt_id=1003
-    __is5g = 1
-    cs=99
-    def on(self):
-        if self.__is5g==1:
-            print("打开NFC")
-        else:
-            print("NFC打开失败")
-#重写与调用父类方法
-class Phone(th5g,Nfc):
-    th5g.cs=102
-    def on(self):
-        if self._th5g__is5g==1:
-            super().on()
-            print("成功！")
-        else:
-            Nfc.on(self)
-            print("失败!")
+# class th5g:
+#     __is5g=0.9
+#     pasrt_id=1002
+#     cs=100
+#     def __chat_5g(self):
+#         print("正在通话中")
+#     def chats_5g(self):
+#         if self.__is5g>=1:
+#             print("5g打开成功")
+#         else:
+#             print('5g打开失败')
+#             self.__chat_5g()
+# class Nfc():
+#     pasrt_id=1003
+#     __is5g = 1
+#     cs=99
+#     def on(self):
+#         if self.__is5g==1:
+#             print("打开NFC")
+#         else:
+#             print("NFC打开失败")
+# #重写与调用父类方法
+# class Phone(th5g,Nfc):
+#     th5g.cs=102
+#     def on(self):
+#         if self._th5g__is5g==1:
+#             super().on()
+#             print("成功！")
+#         else:
+#             Nfc.on(self)
+#             print("失败!")
+#
+#     pass
+# s=Phone()
+# s.chats_5g()
+# s.on()
+# print(s.cs)
+# def fe(data:int)->list:
+#     return data*10 #type:int
+# print(fe(1))
 
-    pass
-s=Phone()
-s.chats_5g()
-s.on()
-print(s.cs)
+#多态和抽象类接口
+# class Alimony:
+#     def spake(self):
+#         pass
+# class Cat(Alimony):
+#     def spake(self):
+#         print("喵喵")
+# class Dog(Alimony):
+#     def spake(self):
+#         print("汪汪")
+# def ml(alimony:Alimony):
+#     alimony.spake()
+# cat=Cat()
+# dog=Dog()
+# ml(cat)
+# ml(dog)
+# class Kd:
+#     def id(self):
+#         pass
+#     def xh(self):
+#         pass
+# class xiaomi(Kd):
+#     def id(self):
+#         print("xiao1003")
+#     def xh(self):
+#         print("xiaomi手机")
+# class relmi(Kd):
+#     def id(self):
+#         print("relmi1001")
+#     def xh(self):
+#         print("relmi手机")
+# def mege(kd:Kd):
+#     kd.id()
+#     kd.xh()
+# mi=xiaomi()
+# relmi=relmi()
+# mege(mi)
+# mege(relmi)
+
+#mysql的连接
+# from pymysql import Connection
+# conn=Connection(
+#     host='localhost',
+#     port=3306,
+#     user='root',
+#     password='123456'
+# )
+# print(conn.get_server_info())
+# curses=conn.cursor()
+# conn.select_db('students')
+# # curses.execute("create table test05(id int,info varchar(255))")
+# curses.execute("insert into test05 values (1,'code')")
+# curses.execute('select * from test')
+# test=curses.fetchall()
+# for i in test:
+#     print(i)
+# conn.commit()
+# conn.close()
+
+#
+st_li=[]
+with open('studentP5', 'r', encoding='utf-8') as f:
+    for li in f.readlines():
+        li = li.strip()
+        if not li:
+            continue
+        s=li.split(",")
+        st_li.append(s)
+print(st_li)
