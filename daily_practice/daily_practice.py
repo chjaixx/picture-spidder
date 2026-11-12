@@ -27,7 +27,8 @@
 #         num+=i
 #         li+=1
 # print(num,li,num/li)
-
+import numpy as np
+# import pandas
 # class Circle:
 #     def __init__(self,r=0):
 #         self.__radius=r
@@ -513,13 +514,284 @@
 # conn.commit()
 # conn.close()
 
+# st_li=[]
+# with open('studentP5', 'r', encoding='utf-8') as f:
+#     for li in f.readlines():
+#         li = li.strip()
+#         if not li:
+#             continue
+#         s=li.sp
+#         st_li.append(s)
+# print(st_li)
+
+#pyspark
+#from fake_useragent import UserAgent
+# import os
+# os.system('chcp 65001')
+# from pyspark import SparkConf,SparkContext
+# conf=SparkConf().setMaster("local[*]").\
+#     setAppName('test_spark')
+# sc=SparkContext(conf=conf)
+# print(sc.version)
+# sc.stop()
+# uangen=UserAgent()
+# print(uangen.random)
+
+# import numpy as np
+# print(np.__version__)#获取队列的版本号
+# arr=np.array([1,2,3,4])#创建一数组
+# arr=arr*2
+# print(arr)
+# print(type(arr))
+# arr=np.array([[['a','b','c'],[1,2,3]],
+#                 [['d','e','f'],[4,5,6]],
+#               [['h','i',' '],[7,8,9]]#队列的列要对齐，如果缺少可以用其他代替
+#               ])
+# print(arr.ndim)#获取数组的形状
+# print(arr.shape)#获取队列的层数，行数，列数
+# whar=arr[2,0,2]*3+arr[2,0,0]+arr[1,0,1]
+# print(whar)
+# arr=np.array([[1,2,3,4],
+#               [5,6,7,8],
+#               [9,10,11,12],
+#               [13,14,15,16]])
+# print(arr[1:3])
+# print()
+# print(arr[::-1])
+# print()
+# print(arr[:,:1])#取第一列
+# print()
+# print(arr[2:,:2])#逗号前取行，后取列
+# print(arr+1)#numpy可以同时给每个数据都加减乘除平方
+# arr=np.array([78.4,56.6,8.001,60.3,90,100])#数据中有一个是小数就全部是小数类型
+# print(arr>=60)
+# print(np.round(arr))#四舍五入
+# print(np.floor(arr))#向下取舍
+# print(np.ceil(arr))#向上取舍
+# arr[arr<60]=0
+# print(np.pi)
+# print(arr)
+
+# n,m = map(int,input().split())
+# m=2
+# n=2
+# a = [[0]*(m+2) for _ in range(n+2)] #外圈套0
 #
-st_li=[]
-with open('studentP5', 'r', encoding='utf-8') as f:
-    for li in f.readlines():
-        li = li.strip()
-        if not li:
-            continue
-        s=li.split(",")
-        st_li.append(s)
-print(st_li)
+# for i in range(1,n+1):
+#     a[i] =list(map(str,input()))
+#     a[i][1:-1] =list(map(str,input()))
+#
+#
+# for i in range(1,n+1):
+#     for j in range(1,m+1):
+#         cnt = 0
+#         if a[i][j] != '*':
+# 			#判断周围一圈有多少颗地雷“*”
+#             for p in range(i-1,i+2):
+#                 for q in range(j-1,j+2):
+#                     if a[p][q] == '*':
+#                         cnt += 1
+#             a[i][j] = cnt
+#     print("".join(map(str,a[i][1:-1])))
+# a[1] =list(map(str,input()))
+# a[1][1:-1] =list(map(str,input()))
+# print(a)
+# n=[[0,0,0,0]]
+# n[0]=list(map(str,input()))
+# print(n)
+
+#numpy数组之间广播合并为多维数组
+# import numpy as np
+# arr1=np.array([[1],[2],[3],[4],[5],[6],[7],[8],[9]])
+# print(np.shape(arr1))
+# arr2=np.array([[1,2,3,4,5,6,7,8,9])
+# print(np.shape(arr2))
+# print(arr2*arr1)#当行数和列数相同时，相乘才能得到一个多维数组9*9乘法表
+
+#numpy的聚合函数
+# import numpy as np
+# arr=np.array([[1,2,3,4,5],
+#              [6,7,8,9,10]])
+# print(np.sum(arr))#求和
+# print(np.mean(arr))#求平均值
+# print(np.std(arr))#求标准差
+# print(np.var(arr))#求方差
+# print(np.argmin(arr))#求最小值索引
+# print(np.argmax(arr))
+# print(np.sum(arr,axis=0))#求每一列的和
+# print(np.mean(arr,axis=1))#求每一行的平均值
+
+#numpy中进行数据过滤
+# import numpy as np
+# a=[14,12,19,25,17,18]
+# arr=np.array([[14,12,19,25,17,18],
+#               [55,34,68,99,76,66]])
+# print(np.shape(arr))
+# print(arr[arr>=18])
+# print(arr[(arr>=18)&(arr<65)])#筛选大于等于18和小于65的
+# arr1=arr[arr%2==0]
+# print(arr1)
+# arr1=arr[arr%2!=0]
+# print(arr1)
+# arr2=np.where(arr>=18,arr,0)
+# print(arr2)
+
+#numpy随机数生成
+# import numpy as np
+# arr=np.random.default_rng()#构造随机数生成的对象arr
+# print(arr.integers(1,10,5))#（整数型）第一个数是随机生成的最小范围数==1，第二个数是随机生成的最大范围数！=10，第三个是随机生成多少个数
+# arr2=np.random.default_rng(1)#随机数种子，当使用这个随机数种子时，生成的随机数将不会改变
+# print(arr2.integers(1,10,5))
+# arr3=np.random.default_rng()
+# print(arr3.integers(1,10,(3,4)))#(3,4)代表生成三行四列
+# np.random.seed()#主要是设置浮点型随机数的种子可要可不要
+# arr4=np.random.uniform(0,3,(3,4))#浮点型
+# print(arr4)#浮点型随机数
+# arr5=np.array([1,2,3,4,5])
+# ang=np.random.default_rng()#ang是个对象
+# ang.shuffle(arr5)#打乱arr5这个数组
+# print(arr5)
+# ang=np.random.default_rng()
+# fras=np.array(['石头','剪刀','🙅‍','布'])
+# fras=ang.choice(fras,(2,2))#随机选择列表中的已有元素并生成2行2列，或只生成两个元素ang.choice(fras,2)
+# print(fras)
+
+#pandas学习
+# import pandas as pd
+# print(pd.__version__)
+# # data=[100,110,112]
+# # print(pd.Series(data))#将数组排成列，并在左侧输出从0开始的索引，最后输出数据类型
+# # ser=pd.Series(data,index=['a','b','c'])
+# # print(ser)#将索引改为abc
+# # print(ser.loc['b'])#按标签定位
+# # ser.loc['b']=200#修改b标签的数据
+# # print(ser)
+# # print(ser[ser>=110])
+#
+# # #通过字典来实现
+# # disc={
+# #     "Day 1":1768,
+# #     "Day 2":1889,
+# #     "Day 3":2100
+# # }
+# # ser1=pd.Series(disc)
+# # print(ser1[ser1>2000])
+# # ser1.loc["Day 3"]+=200
+# # print(ser1.loc["Day 3"])
+# # print(ser1)
+# # data={
+# #     "name":['a','b','c'],
+# #     'age':[18,33,22]
+# # }
+# # df=pd.DataFrame(data,index=['Em1','Em2','Em3'])
+# # print(df)
+# # print(df.loc['Em1'])#通过标签索引来获取
+# # print(df.iloc[0])#通过下标索引来获取
+#
+# # #添加新的列
+# # df['xinbie']=['man','woman','man']
+# # print(df)
+#
+# # #添加新的一行或多行
+# # df_new=pd.DataFrame([{"name":'梨花',"age":20,"xinbie":'woman'},{"name":'unge',"age":44,"xinbie":'man'}],
+# #                     index=['Em4','Em5'])#新创建一个数组
+# # df=pd.concat([df,df_new])#concat将两个数组拼接在一起，只能用于Dataform形式的拼接
+# # print(df_new)
+# # print(df)
+# df=pd.read_csv("data.csv")#读取.csv文件也可以读取.json文件
+# print(df)#如果数据量过大这样只能打印前五行和后五行使用df.to_string()可打印全部数据
+# pd.DataFrame(df)
+# #按列或多列进行选择
+# print(df["Name"])
+# print(df[["Height","Weight"]])
+# #按行或多行进行选择
+# #df=pd.read_csv("data.csv",index_col="Name")#使用Name列作为索引标签
+# # print(df)
+# # print(df.loc["Ivysaur"])
+# # print(df.loc[["Venusaur","Ivysaur"]])
+# # print(df.loc["Venusaur":"Caterpie",['Height','Weight']])#切片Venusaur到Caterpie的'Height'和'Weight'内容
+# # print(df.iloc[0:11:2,0:3])
+# # n=input("输入一个精灵的名字：")
+# # try:
+# #     print(df.loc[n])
+# # except Exception as e:
+# #     print(f"没有这个精灵{e}")
+# # frdf=df[df['Legendary']==False]#选取Legendary=0的数据，当然也可以直接用0
+# # print(frdf)
+# # frdf=df[(df['Type1']=='Water')|(df['Type2']=='Water')]#或|运算选取以及与运算&
+# # print(frdf)
+#
+# #pandas聚合函数
+# print(df.mean(numeric_only=True))#numeric_only=True代表所有数字列
+# print(df.sum(numeric_only=True))
+# print(df.min(numeric_only=True))
+# print(df.max(numeric_only=True))
+# print(df.count())
+# print(df["Height"].max())
+#
+# #分组查寻
+# df_group=df.groupby('Type1')
+# print(df_group['Height'].max())
+# print(df_group['Height'].mean())
+#
+# #数据清洗移除或修复不完整的数据
+# #df=df.drop(columns=["No",'Legendary'])#删除列
+# #df=df.dropna(subset=['Type2'])#删掉该列中没有数据的行
+# # df=df.fillna({'Type2':'None'})#将该列不可用的数据替换为None
+# # df['Type1']=df['Type1'].replace({'Grass':'GRASS','Fire':'FIRE',
+# #                                  'Watr':'WATER'})#将该列中的对应数据修改
+# #将文本标准化
+# df['Name']=df['Name'].str.lower()#将Name列全部转为小写
+# print(df)
+# df['Legendary']=df['Legendary'].astype(bool)#将该列转为bool类型,不能有字符
+# print(df)
+# df=df.drop_duplicates()#删除重复项
+# print(df)
+
+#Acllma值的转换
+# x='b'
+# x1=ord(x)-32
+# print(x1)
+# x2=chr(x1)
+# print(x2)
+# p=[4,3,2,3]
+# mai=max(p)
+# print(mai)
+# print(p.count(mai))
+
+#pandas merge多表合并（merge内似SQL中的join）用于有关联字段的表
+# import pandas as pd
+# df_stu=pd.DataFrame({
+#     'stu_id':[1,2,4,3],
+#     'stu_name':['梨花','苏沫','叶海','挽歌']
+# })
+# df_sco=pd.DataFrame({
+#     'stu_id':[1,2,3,5],
+#     'scor':[99,87,66,77]
+# })
+# df_class=pd.DataFrame({
+#     'sid':[1,2,3,4],
+#     'class_name':['一班','二班','三班','四班']
+# })
+# res_inner=pd.merge(df_stu,df_sco,on='stu_id',how='inner')#内连接保留关联键一样，on='关联键'，how='连接方式'
+# print(res_inner)
+# res_left=pd.merge(df_stu,df_sco,on='stu_id',how='left')#无成绩显示NaN
+# print(res_left)
+# res_diff=pd.merge(df_stu,df_class,left_on='stu_id',right_on='sid',how='left')#当关联键名不一样时
+# print(res_diff)
+# res=pd.merge(df_stu,df_sco,on=['stu_id','stu_id'])#多字段同时匹配
+# print(res)
+# res1=pd.merge(df_stu,df_sco,on='stu_id',how='left')
+# res2=pd.merge(res1,df_class,left_on='stu_id',right_on='sid',how='left')#三表以上合并，就是链式嵌套
+# res2['scor']=res2['scor'].fillna(0)
+# print(res2)
+# res2.to_csv('stu.csv',index=False,encoding='utf-8',header=False,sep=',')#index=False不导出索引，header=True是否导出表头末日True，sep=','分隔符默认逗号
+
+
+# n=['1','2','3','4','5']
+# l=int(n.pop(0))
+# m=int(n.pop(0))
+# print(l,m,n)
+s='qwert'
+s1=list(map(str,s))
+print(s1)
