@@ -90,7 +90,6 @@ class StudentManager:
         try:
             with open(self.file_name, 'r', encoding='utf-8') as f:
                 lines = f.readlines()
-                # 过滤空行
                 real_lines = [line for line in lines if line.strip()]
                 return len(real_lines)
         except Exception as e:
@@ -122,7 +121,7 @@ def main():
         elif choice == "5":
             manager.stu_find()
         elif choice =="6":
-            print(manager.count_line())
+            print(f'总人数：{manager.count_line()}人')
         elif choice == "0":
             print("程序退出")
             break
